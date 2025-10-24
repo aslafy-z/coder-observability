@@ -4,7 +4,56 @@ entries:
   - annotations:
       artifacthub.io/category: monitoring-logging
     apiVersion: v2
-    created: "2025-10-24T11:12:36.970354798+02:00"
+    created: "2025-10-24T11:16:14.876271769+02:00"
+    dependencies:
+    - condition: pyroscope.enabled
+      name: pyroscope
+      repository: https://grafana.github.io/helm-charts
+      version: ~v1.14.1
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: ~v7.3.7
+    - condition: prometheus.enabled
+      name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: ~v25.24.1
+    - condition: loki.enabled
+      name: loki
+      repository: https://grafana.github.io/helm-charts
+      version: ~v6.7.3
+    - condition: tempo.enabled
+      name: tempo
+      repository: https://grafana.github.io/helm-charts
+      version: ~v1.23.0
+    - alias: grafana-agent
+      condition: grafana-agent.enabled
+      name: grafana-agent
+      repository: https://grafana.github.io/helm-charts
+      version: ~0.37.0
+    description: Gain insights into your Coder deployment
+    digest: e64cec3804ff1f4e6a1f5f263c4f67b5c572902128b4ae919a6bd61d97e7b8cd
+    icon: https://helm.coder.com/coder_logo_black.png
+    keywords:
+    - observability
+    - coder
+    - coder.com
+    - cloud development environment
+    - cde
+    maintainers:
+    - name: Coder Technologies, Inc.
+      url: https://github.com/coder/observability/issues
+    name: coder-observability
+    sources:
+    - https://github.com/coder/observability
+    type: application
+    urls:
+    - https://zadkiel.fr/coder-observability/coder-observability-0.6.0.tgz
+    version: 0.6.0
+  - annotations:
+      artifacthub.io/category: monitoring-logging
+    apiVersion: v2
+    created: "2025-10-24T11:16:14.856058132+02:00"
     dependencies:
     - condition: pyroscope.enabled
       name: pyroscope
@@ -50,4 +99,4 @@ entries:
     urls:
     - https://zadkiel.fr/coder-observability/coder-observability-0.4.3.tgz
     version: 0.4.3
-generated: "2025-10-24T11:12:36.94904403+02:00"
+generated: "2025-10-24T11:16:14.836645715+02:00"
